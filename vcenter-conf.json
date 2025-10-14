@@ -1,0 +1,6 @@
+{ "vcenter" : [
+    {
+        "vcenterhost" : "vcenter.leo.local",
+        "vcenteradmin" : "leo.chrapla.adm@leo.local"
+    }]
+}
