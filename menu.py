@@ -30,13 +30,7 @@ def get_local_ip():
     finally: 
         s.close() 
     return ip
-def show_session_info(username, host):
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("Session Information:")
-    print("Vcenter Host:", host)
-    print("Vcenter Admin:", username)
-    print("Local IP Address:", get_local_ip())
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
 
 def connect_to_vcenter(host, username):
     global si
@@ -45,6 +39,14 @@ def connect_to_vcenter(host, username):
     si = SmartConnect(host=host, user=username, pwd=password, sslContext=context)
     aboutInfo = si.content.about
     return si , aboutInfo
+
+def show_session_info(username, host):
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Session Information:")
+    print("Vcenter Host:", host)
+    print("Vcenter Admin:",username)
+    print("Local IP Address:", get_local_ip())
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
 def get_all_vms():
     content = si.RetrieveContent()
     container = content.rootFolder  
